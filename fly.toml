@@ -1,0 +1,22 @@
+# fly.toml app configuration file generated for zero2prod-test-1234 on 2024-02-15T19:41:24-05:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = 'zero2prod-test-1234'
+primary_region = 'mia'
+
+[build]
+
+[http_service]
+internal_port = 8000
+force_https = true
+auto_stop_machines = true
+auto_start_machines = true
+min_machines_running = 0
+processes = ['app']
+
+[[vm]]
+memory = '1gb'
+cpu_kind = 'shared'
+cpus = 1
